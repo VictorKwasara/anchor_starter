@@ -1,0 +1,24 @@
+[package]
+name = "starter"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "starter"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = {version = "0.26.0", features = ["init-if-needed"]}
+spl-token =  "3.5.0"
+anchor-spl = {version= "0.26.0", features=["metadata", "token", "dex"]}
+solana-program = "1.14.16"
+serum_dex = "0.5.4"
+num_enum = "0.5.10"
